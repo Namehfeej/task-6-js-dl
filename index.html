@@ -1,0 +1,42 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Dinamics Lists</title>
+</head>
+<body>
+    <h1 id="title-task6">Lista de integrantes</h1>
+    <form>
+        <h2>Primer integrante</h2>
+        <dl>
+            <dt><label for="input1-first-name">Primer Nombre</label></dt>
+            <dd><input id="input1-first-name" name="input1-first-name" type="text" placeholder="Carlos" ></dd>
+            <dt><label for="input1-second-name">Segundo Nombre</label></dt>
+            <dd><input id="input1-second-name" name="input1-second-name" type="text" placeholder="Carlos" ></dd>
+            <dt><label for="input1-first-lastName">Primer Apellido</label></dt>
+            <dd><input id="input1-first-lastName" name="input1-first-lastName" type="text" placeholder="Dorado" ></dd>
+            <dt><label for="input1-second-lastName">Segundo Apellido</label></dt>
+            <dd><input id="input1-second-lastName" name="input1-second-lastName" type="text" placeholder="Dorado" ></dd>
+        </dl>
+        <h2>Segundo integrante</h2>
+        <dl>
+            <dt><label for="input2-first-name">Primer Nombre</label></dt>
+            <dd><input id="input2-first-name" name="input2-first-name" type="text" placeholder="Jeef" ></dd>
+            <dt><label for="input2-second-name">Segundo Nombre</label></dt>
+            <dd><input id="input2-second-name" name="input2-second-name" type="text" placeholder="Heman" ></dd>
+            <dt><label for="input2-first-lastName">Primer Apellido</label></dt>
+            <dd><input id="input2-first-lastName" name="input2-first-lastName" type="text" placeholder="Polo" ></dd>
+            <dt><label for="input2-second-lastName">Segundo Apellido</label></dt>
+            <dd><input id="input2-second-lastName" name="input2-second-lastName" type="text" placeholder="Ospina" ></dd>
+        </dl>
+        
+        <button type="submit" id="submit-button" onsubmit="buttonAddUserConsole(event)"> Agregar Integrantes </button>
+    </form>
+    
+
+
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
