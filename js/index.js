@@ -35,27 +35,67 @@
 
                 //Initial string Uppercase and others strings lowercase.
 
-                const newInput1FirstNameValue =  input1FirstNameValueNotSpace.charAt(0).toUpperCase() + input1FirstNameValueNotSpace.slice(1).toLowerCase();
+                let newInput1FirstNameValue =  input1FirstNameValueNotSpace.charAt(0).toUpperCase() + input1FirstNameValueNotSpace.slice(1).toLowerCase();
                 
-                const newInput1SecondNameValue =  input1SecondNameValueNotSpace.charAt(0).toUpperCase() + input1SecondNameValueNotSpace.slice(1).toLowerCase();
+                let newInput1SecondNameValue =  input1SecondNameValueNotSpace.charAt(0).toUpperCase() + input1SecondNameValueNotSpace.slice(1).toLowerCase();
 
-                const newInput1FirstLastNameValue =  input1FirstLastNameValueNotSpace.toUpperCase();
+                let newInput1FirstLastNameValue =  input1FirstLastNameValueNotSpace.toUpperCase();
 
-                const newInput1SecondLastNameValue =  input1SecondLastNameValueNotSpace.toUpperCase();
+                let newInput1SecondLastNameValue =  input1SecondLastNameValueNotSpace.toUpperCase();
 
-                const newInput2FirstNameValue =  input2FirstNameValueNotSpace.charAt(0).toUpperCase() + input2FirstNameValueNotSpace.slice(1).toLowerCase();
+                let newInput2FirstNameValue =  input2FirstNameValueNotSpace.charAt(0).toUpperCase() + input2FirstNameValueNotSpace.slice(1).toLowerCase();
 
-                const newInput2SecondNameValue =  input2SecondNameValueNotSpace.charAt(0).toUpperCase() + input2SecondNameValueNotSpace.slice(1).toLowerCase();
+                let newInput2SecondNameValue =  input2SecondNameValueNotSpace.charAt(0).toUpperCase() + input2SecondNameValueNotSpace.slice(1).toLowerCase();
 
-                const newInput2FirstLastNameValue =  input2FirstLastNameValueNotSpace.toUpperCase();
+                let newInput2FirstLastNameValue =  input2FirstLastNameValueNotSpace.toUpperCase();
 
-                const newInput2SecondLastNameValue =  input2SecondLastNameValueNotSpace.toUpperCase();
+                let newInput2SecondLastNameValue =  input2SecondLastNameValueNotSpace.toUpperCase();
 
                 //Validate second name empty and print without any spaces.
 
                 if (newInput1SecondNameValue.length === 0 && newInput2SecondNameValue.length !== 0) {
                         if (newInput1FirstNameValue === newInput2FirstNameValue || newInput1FirstNameValue === newInput2SecondNameValue) {
                             console.log("Los nombres tienen coincidencias.");
+                            //Prompt for color name.
+                            const promptNameColor = prompt("Los nombres tienen coincidencias. Elige un color para diferenciar los nombres: rojo o azul.");
+
+                            let promptNameText = promptNameColor.toLowerCase();
+                            console.log(promptNameText);
+
+                            if(promptNameText === 'rojo') {
+                                
+                                const newInput2SecondNameValueProp = document.getElementById('input2-second-name');
+                                const input2AtributteColor = document.createAttribute("class");
+
+                                input2AtributteColor.value = "name-color-red";
+                                newInput2SecondNameValueProp.setAttributeNode(input2AtributteColor);
+
+                                //console.log(newInput2SecondNameValueProp.getAttribute("class"));
+
+                                
+                                newInput1FirstNameValue.innerHTML = newInput1FirstNameValue.fontcolor("azul");
+                                console.log(newInput1FirstNameValue);
+
+                                const newInput1FirstNameValueProp = document.getElementById('input1-first-name');
+                                const input1AtributteColor = document.createAttribute("class");
+
+                                input1AtributteColor.value = "name-color-blue";
+                                newInput1FirstNameValueProp.setAttributeNode(input1AtributteColor);
+
+                                //console.log(newInput1FirstNameValueProp.getAttribute("class"));
+                                
+                                
+                            } else if (promptNameText === 'azul') {
+                                const newInput1FirstNameValueColor = newInput1FirstNameValue.fontcolor("azul");
+                                console.log(newInput1FirstNameValueColor);
+                                newInput1FirstNameValue.innerHTML = newInput1FirstNameValueColor;
+                                
+
+                                const newInput2SecondNameValueColor = newInput2SecondNameValue.fontcolor("red");
+                                console.log(newInput2SecondNameValueColor);
+                                newInput2SecondNameValue.innerHTML = newInput2SecondNameValueColor;
+                            }
+                            
                         } else {
                             FullNameValueToConsole = "-----\nIntegrante 1: " + newInput1FirstNameValue + newInput1SecondNameValue + " " + newInput1FirstLastNameValue + " " + newInput1SecondLastNameValue + "\n" + "Integrante 2: " + newInput2FirstNameValue + " " + newInput2SecondNameValue + " " + newInput2FirstLastNameValue + " " + newInput2SecondLastNameValue + "\n" + "-----";
                             console.log(FullNameValueToConsole);

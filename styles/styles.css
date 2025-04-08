@@ -7,3 +7,11 @@ dl {
     margin-left: 0;
     margin-right: 0;
   }
+
+  .name-color-red {
+    color: red;
+  }
+
+  .name-color-blue {
+    color: blue;
+  }
