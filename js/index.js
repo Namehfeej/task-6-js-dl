@@ -52,6 +52,29 @@
 
                 let newInput2SecondLastNameValue =  input2SecondLastNameValueNotSpace.toUpperCase();
 
+                //functions for print names
+
+                function FullNamesOnConsole(FullNameValueToConsole){
+                    FullNameValueToConsole = "-----\nIntegrante 1: " + newInput1FirstNameValue + " " + newInput1SecondNameValue + " " + newInput1FirstLastNameValue + " " + newInput1SecondLastNameValue + "\n" + "Integrante 2: " + newInput2FirstNameValue + " " + newInput2SecondNameValue + " " + newInput2FirstLastNameValue + " " + newInput2SecondLastNameValue + "\n" + "-----";
+                    console.log(FullNameValueToConsole);
+                };
+
+                function FullNamesOnConsoleNotSecondNameInput1(FullNameValueToConsole){
+                    FullNameValueToConsole = "-----\nIntegrante 1: " + newInput1FirstNameValue + newInput1SecondNameValue + " " + newInput1FirstLastNameValue + " " + newInput1SecondLastNameValue + "\n" + "Integrante 2: " + newInput2FirstNameValue + " " + newInput2SecondNameValue + " " + newInput2FirstLastNameValue + " " + newInput2SecondLastNameValue + "\n" + "-----";
+                    console.log(FullNameValueToConsole);
+                };
+
+                function FullNamesOnConsoleNotSecondNameInput2(FullNameValueToConsole){
+                    FullNameValueToConsole = "-----\nIntegrante 1: " + newInput1FirstNameValue + " " + newInput1SecondNameValue + " " + newInput1FirstLastNameValue + " " + newInput1SecondLastNameValue + "\n" + "Integrante 2: " + newInput2FirstNameValue + newInput2SecondNameValue + " " + newInput2FirstLastNameValue + " " + newInput2SecondLastNameValue + "\n" + "-----";
+                    console.log(FullNameValueToConsole); 
+                };
+
+                function FullNamesOnConsoleNotSecondName(FullNameValueToConsole){
+                    FullNameValueToConsole = "-----\nIntegrante 1: " + newInput1FirstNameValue + newInput1SecondNameValue + " " + newInput1FirstLastNameValue + " " + newInput1SecondLastNameValue + "\n" + "Integrante 2: " + newInput2FirstNameValue + newInput2SecondNameValue + " " + newInput2FirstLastNameValue + " " + newInput2SecondLastNameValue + "\n" + "-----";
+                    console.log(FullNameValueToConsole); 
+                }
+
+
                 //Validate second name empty and print without any spaces.
 
                 if (newInput1SecondNameValue.length === 0 && newInput2SecondNameValue.length !== 0) {
@@ -100,8 +123,7 @@
                             }
                             
                         } else {
-                            FullNameValueToConsole = "-----\nIntegrante 1: " + newInput1FirstNameValue + newInput1SecondNameValue + " " + newInput1FirstLastNameValue + " " + newInput1SecondLastNameValue + "\n" + "Integrante 2: " + newInput2FirstNameValue + " " + newInput2SecondNameValue + " " + newInput2FirstLastNameValue + " " + newInput2SecondLastNameValue + "\n" + "-----";
-                            console.log(FullNameValueToConsole);
+                            FullNamesOnConsoleNotSecondNameInput1();
                             console.log("No hay coincidencias entre los nombres.");
                             confirmAction();
                         }
@@ -118,42 +140,81 @@
                             
 
                             if(promptNameText === 'rojo') {
-                                
-                                const newInput1SecondNameValueProp = document.getElementById('input1-second-name');
-                                const input2AtributteColor = document.createAttribute("class");
-
-                                input2AtributteColor.value = "name-color-red";
-                                newInput1SecondNameValueProp.setAttributeNode(input2AtributteColor);
-
-
-                                const newInput2FirstNameValueProp = document.getElementById('input2-first-name');
-                                const input1AtributteColor = document.createAttribute("class");
-
-                                input1AtributteColor.value = "name-color-blue";
-                                newInput2FirstNameValueProp.setAttributeNode(input1AtributteColor);
-                                confirmAction();
-                                
-                            } else if (promptNameText === 'azul') {
-
-                                const newInput1SecondNameValueProp = document.getElementById('input1-second-name');
-                                const input2AtributteColor = document.createAttribute("class");
-
-                                input2AtributteColor.value = "name-color-blue";
-                                newInput1SecondNameValueProp.setAttributeNode(input2AtributteColor);
-                                
-                                newInput1FirstNameValue.innerHTML = newInput1FirstNameValue.fontcolor("red");
 
                                 const newInput2FirstNameValueProp = document.getElementById('input2-first-name');
                                 const input1AtributteColor = document.createAttribute("class");
 
                                 input1AtributteColor.value = "name-color-red";
                                 newInput2FirstNameValueProp.setAttributeNode(input1AtributteColor);
+
+                                const newInput1FirstNameValueProp = document.getElementById('input1-first-name');
+                                const input1FirstAtributteColor = document.createAttribute("class");
+
+                                input1FirstAtributteColor.value = "name-color-blue";
+                                newInput1FirstNameValueProp.setAttributeNode(input1FirstAtributteColor);
+
+
                                 confirmAction();
+                                
+                            } else if (promptNameText === 'azul') {
+
+                                const newInput2FirstNameValueProp = document.getElementById('input2-first-name');
+                                const input1AtributteColor = document.createAttribute("class");
+
+                                input1AtributteColor.value = "name-color-red";
+                                newInput2FirstNameValueProp.setAttributeNode(input1AtributteColor);
+
+                                const newInput1FirstNameValueProp = document.getElementById('input1-first-name');
+                                const input1FirstAtributteColor = document.createAttribute("class");
+
+                                input1FirstAtributteColor.value = "name-color-red";
+                                newInput1FirstNameValueProp.setAttributeNode(input1FirstAtributteColor);
+
+                                confirmAction();
+                            }
+                        } else if (newInput1FirstNameValue === newInput2FirstNameValue) {
+                    //Prompt for color name.
+                    const promptNameColor = prompt("Los nombres tienen coincidencias. Elige un color para diferenciar los nombres: rojo o azul.");
+
+                    let promptNameText = promptNameColor.toLowerCase();
+
+
+                    if(promptNameText === 'rojo') {
+                        
+                        const newInput2FirstNameValueProp = document.getElementById('input2-first-name');
+                        const input1AtributteColor = document.createAttribute("class");
+
+                        input1AtributteColor.value = "name-color-blue";
+                        newInput2FirstNameValueProp.setAttributeNode(input1AtributteColor);
+
+                        const newInput1FirstNameValueProp = document.getElementById('input1-first-name');
+                        const input1FirstAtributteColor = document.createAttribute("class");
+
+                        input1FirstAtributteColor.value = "name-color-red";
+                        newInput1FirstNameValueProp.setAttributeNode(input1FirstAtributteColor);
+
+
+                        confirmAction();
+                        
+                    } else if (promptNameText === 'azul') {
+
+                        const newInput2FirstNameValueProp = document.getElementById('input2-first-name');
+                        const input1AtributteColor = document.createAttribute("class");
+
+                        input1AtributteColor.value = "name-color-red";
+                        newInput2FirstNameValueProp.setAttributeNode(input1AtributteColor);
+
+                        const newInput1FirstNameValueProp = document.getElementById('input1-first-name');
+                        const input1FirstAtributteColor = document.createAttribute("class");
+
+                        input1FirstAtributteColor.value = "name-color-blue";
+                        newInput1FirstNameValueProp.setAttributeNode(input1FirstAtributteColor);
+
+                        confirmAction();
                             }
                         }
                         else {
-                            FullNameValueToConsole = "-----\nIntegrante 1: " + newInput1FirstNameValue + " " + newInput1SecondNameValue + " " + newInput1FirstLastNameValue + " " + newInput1SecondLastNameValue + "\n" + "Integrante 2: " + newInput2FirstNameValue + newInput2SecondNameValue + " " + newInput2FirstLastNameValue + " " + newInput2SecondLastNameValue + "\n" + "-----";
-                            console.log(FullNameValueToConsole); 
+                            FullNamesOnConsoleNotSecondNameInput2();
                             console.log("No hay coincidencias entre los nombres.");
                             confirmAction();
                         }
@@ -199,8 +260,7 @@
                             }
 
                         } else {
-                            FullNameValueToConsole = "-----\nIntegrante 1: " + newInput1FirstNameValue + newInput1SecondNameValue + " " + newInput1FirstLastNameValue + " " + newInput1SecondLastNameValue + "\n" + "Integrante 2: " + newInput2FirstNameValue + newInput2SecondNameValue + " " + newInput2FirstLastNameValue + " " + newInput2SecondLastNameValue + "\n" + "-----";
-                            console.log(FullNameValueToConsole); 
+                            FullNamesOnConsoleNotSecondName();
                             console.log("No hay coincidencias entre los nombres.");
                             confirmAction();
                         }
@@ -361,8 +421,7 @@
                         }
                         
                         else {
-                            FullNameValueToConsole = "-----\nIntegrante 1: " + newInput1FirstNameValue + " " + newInput1SecondNameValue + " " + newInput1FirstLastNameValue + " " + newInput1SecondLastNameValue + "\n" + "Integrante 2: " + newInput2FirstNameValue + " " + newInput2SecondNameValue + " " + newInput2FirstLastNameValue + " " + newInput2SecondLastNameValue + "\n" + "-----";
-                            console.log(FullNameValueToConsole);
+                            FullNamesOnConsole();
                             console.log("No hay coincidencias entre los nombres.");
                             confirmAction();
                         }
@@ -563,6 +622,8 @@
                        console.log('No se evaluaron los apellidos.');
                    }
                }
+
+    
 
     
 
