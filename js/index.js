@@ -23,12 +23,14 @@
             buttonAddUser.addEventListener('click', buttonAddUserConsole);
 
             function buttonAddUserConsole(event) {
+                
                 event.preventDefault();
                 //Delete all spaces in the input values.
                 const input1FirstNameValueNotSpace = input1FirstName.value.trim();
                 const input1SecondNameValueNotSpace = input1SecondName.value.trim();
                 const input1FirstLastNameValueNotSpace = input1FirstLastName.value.trim();
                 const input1SecondLastNameValueNotSpace = input1SecondLastName.value.trim();
+
                 const input2FirstNameValueNotSpace = input2FirstName.value.trim();
                 const input2SecondNameValueNotSpace = input2SecondName.value.trim();
                 const input2FirstLastNameValueNotSpace = input2FirstLastName.value.trim();
@@ -37,7 +39,7 @@
                 //Initial string Uppercase and others strings lowercase.
 
                 let newInput1FirstNameValue =  input1FirstNameValueNotSpace.charAt(0).toUpperCase() + input1FirstNameValueNotSpace.slice(1).toLowerCase();
-                
+
                 let newInput1SecondNameValue =  input1SecondNameValueNotSpace.charAt(0).toUpperCase() + input1SecondNameValueNotSpace.slice(1).toLowerCase();
 
                 let newInput1FirstLastNameValue =  input1FirstLastNameValueNotSpace.toUpperCase();
@@ -49,7 +51,7 @@
                 let newInput2SecondNameValue =  input2SecondNameValueNotSpace.charAt(0).toUpperCase() + input2SecondNameValueNotSpace.slice(1).toLowerCase();
 
                 let newInput2FirstLastNameValue =  input2FirstLastNameValueNotSpace.toUpperCase();
-
+                
                 let newInput2SecondLastNameValue =  input2SecondLastNameValueNotSpace.toUpperCase();
 
                 //functions for print names
@@ -78,8 +80,7 @@
                 //Validate second name empty and print without any spaces.
 
                 if (newInput1SecondNameValue.length === 0 && newInput2SecondNameValue.length !== 0) {
-                        
-                        if (newInput1FirstNameValue === newInput2FirstNameValue || newInput1FirstNameValue === newInput2SecondNameValue) {
+                    if (newInput1FirstNameValue === newInput2FirstNameValue || newInput1FirstNameValue === newInput2SecondNameValue) {
                             console.log("Los nombres tienen coincidencias.");
                             //Prompt for color name.
                             const promptNameColor = prompt("Los nombres tienen coincidencias. Elige un color para diferenciar los nombres: rojo o azul.");
@@ -122,15 +123,7 @@
                                 confirmAction();
                             }
                             
-                        } else {
-                            FullNamesOnConsoleNotSecondNameInput1();
-                            console.log("No hay coincidencias entre los nombres.");
-                            confirmAction();
-                        }
-
-                    
-                     
-                } else if (newInput1SecondNameValue.length !== 0 && newInput2SecondNameValue.length === 0) {
+                    } else if (newInput1SecondNameValue.length !== 0 && newInput2SecondNameValue.length === 0) {
                         if (newInput1FirstNameValue ===  newInput1SecondNameValue || newInput1SecondNameValue === newInput2FirstNameValue) {
                             console.log("Los nombres tienen coincidencias.");
                     //Prompt for color name.
@@ -218,9 +211,7 @@
                             console.log("No hay coincidencias entre los nombres.");
                             confirmAction();
                         }
-                }
-                
-                    else if (newInput1SecondNameValue.length === 0 && newInput2SecondNameValue.length === 0) {
+                    } else if (newInput1SecondNameValue.length === 0 && newInput2SecondNameValue.length === 0) {
                         if(newInput1FirstNameValue === newInput2FirstNameValue || newInput2FirstNameValue === newInput1FirstNameValue) {
                             console.log("Los nombres tienen coincidencias.");
                         //Prompt for color name.
@@ -266,9 +257,7 @@
                         }
 
                     
-                } 
-                
-                    else if (newInput1SecondNameValue.length !== 0 && newInput2SecondNameValue.length !== 0){
+                    } else if (newInput1SecondNameValue.length !== 0 && newInput2SecondNameValue.length !== 0){
                         if (newInput1FirstNameValue === newInput2FirstNameValue || newInput2FirstNameValue === newInput1FirstNameValue) {
                             console.log("Los nombres tienen coincidencias.");
                             //Prompt for color name.
@@ -426,35 +415,29 @@
                             confirmAction();
                         }
                         
-                    }
-                
-            }
+                    } else {
+                        FullNamesOnConsoleNotSecondNameInput1();
+                        console.log("No hay coincidencias entre los nombres.");
+                        confirmAction();
+                    }        
+                }
+            }   
 
     function confirmAction(messageConfirmText) {
-        event.preventDefault();
+        
         //Delete all spaces in the input values.
-        const input1FirstNameValueNotSpace = input1FirstName.value.trim();
-        const input1SecondNameValueNotSpace = input1SecondName.value.trim();
+        
         const input1FirstLastNameValueNotSpace = input1FirstLastName.value.trim();
         const input1SecondLastNameValueNotSpace = input1SecondLastName.value.trim();
-        const input2FirstNameValueNotSpace = input2FirstName.value.trim();
-        const input2SecondNameValueNotSpace = input2SecondName.value.trim();
+
         const input2FirstLastNameValueNotSpace = input2FirstLastName.value.trim();
         const input2SecondLastNameValueNotSpace = input2SecondLastName.value.trim();
 
         //Initial string Uppercase and others strings lowercase.
 
-        let newInput1FirstNameValue =  input1FirstNameValueNotSpace.charAt(0).toUpperCase() + input1FirstNameValueNotSpace.slice(1).toLowerCase();
-        
-        let newInput1SecondNameValue =  input1SecondNameValueNotSpace.charAt(0).toUpperCase() + input1SecondNameValueNotSpace.slice(1).toLowerCase();
-
         let newInput1FirstLastNameValue =  input1FirstLastNameValueNotSpace.toUpperCase();
 
         let newInput1SecondLastNameValue =  input1SecondLastNameValueNotSpace.toUpperCase();
-
-        let newInput2FirstNameValue =  input2FirstNameValueNotSpace.charAt(0).toUpperCase() + input2FirstNameValueNotSpace.slice(1).toLowerCase();
-
-        let newInput2SecondNameValue =  input2SecondNameValueNotSpace.charAt(0).toUpperCase() + input2SecondNameValueNotSpace.slice(1).toLowerCase();
 
         let newInput2FirstLastNameValue =  input2FirstLastNameValueNotSpace.toUpperCase();
 
@@ -610,18 +593,13 @@
                                 newInput2FirstLastNameValueProp.setAttributeNode(input2FirstAtributteColor);
                             }
 
-                        }
-                        
-                        else {
+                        } else {
                             console.log("No hay coincidencias entre los apellidos.");
                         }
-
-
-
-                   } else {
-                       console.log('No se evaluaron los apellidos.');
+                   }      else {
+                            console.log('No se evaluaron los apellidos.');
                    }
-               }
+    }
 
     
 

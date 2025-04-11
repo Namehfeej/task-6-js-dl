@@ -10,8 +10,10 @@ dl {
 
   .name-color-red {
     color: red;
+    font-weight: bold;
   }
 
   .name-color-blue {
     color: blue;
+    font-weight: bold;
   }
